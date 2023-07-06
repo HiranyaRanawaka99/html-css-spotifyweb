@@ -1,0 +1,261 @@
+:root {
+    --header-bg: #080B12;
+    --main-bg: #141922;
+    --footer-bg:#282828;
+
+    --txt-white:white;
+    --txt-gray: #7A7D81;
+
+    --highlight: #76AC2A;
+
+    --base-spacing-grid: 1rem;
+    --footer-height: 100px;
+    --sidebar-width: 300px;
+    --top-bar-height: 100px;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif , Helvetica, 'Neue';
+    color:var(--txt-gray);
+}
+
+.img {
+    width: 100%;
+}
+
+/* LAYOUT */
+
+    /* wrapper */
+
+.wrapper {
+    background-color: var(--main-bg);
+}
+
+    /* top-content */
+
+#top-content {
+    display: flex;
+    height: calc(100vh - var(--footer-height));
+
+    background-color: var(--header-bg);
+}
+
+    /*sidebar*/
+
+#sidebar {
+    width: var(--sidebar-width);
+    background-color: black;
+}
+
+    /* middle section */
+
+#content {
+    width: calc(100% - var(--sidebar-width));
+
+    overflow: auto;
+}
+
+    /* header */
+
+#top-bar {
+    background-color: black;
+    
+    height: var(--top-bar-height);
+
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+ /* footer */
+
+ #footer {
+    background-color: var(--footer-bg);
+    color: var(--txt-white);
+
+    height: var(--footer-height);
+}
+
+
+
+
+/* SECTIONS */
+
+    /* footer */
+
+#footer .playbar {
+    width: 100%;
+    height: 100%;
+
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box {
+    height: 100%;
+
+    display: flex;
+}
+
+.box.left,
+.box.center,
+.box.right {
+    display: flex;
+    align-items: center;
+}
+
+.box.left  img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.box.left .song-name{
+    margin-right: 40px;
+}
+
+.song-name h6 {
+    color:var(--txt-gray)
+}
+
+.song-name h6:hover {
+    text-decoration: underline;
+}
+.fa-heart {
+    margin-right: 10px;
+}
+
+.like-folder .fa-regular:hover {
+    color: var(--txt-gray)
+}
+
+.box.center {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.box.center .player,
+            .time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.player .fa-play {
+    transition: 0.1s;
+
+}
+
+.player .fa-play:hover {
+    transform: scale(1.3);
+}
+
+
+
+.progress-bar  .out {
+    display:block;
+    width: 300px;
+    height: 3px;
+    background-color: var(--txt-gray);
+    border-radius: 10px;
+}
+
+.progress-bar  .in{
+    display:block;
+    width: 50px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+
+    position: relative;
+}
+
+.progress-bar .ball {  
+    display: none;
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    /*allinea perfettamente al centro*/
+    transform: translate(-50%, -50%);
+}
+
+.progress-bar:hover .in{
+    background-color: var(--highlight);
+}
+
+.progress-bar:hover .ball{
+    display: block;
+    background-color: var(--highlight);
+}
+
+.box.right .fa-solid {
+    margin-right: 20px;
+}
+
+.progress-bar-2  .outside {
+    display:block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--txt-gray);
+    border-radius: 10px;
+}
+
+.progress-bar-2 .inside{
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+
+    position: relative;
+}
+
+.progress-bar-2 .ball-right {  
+    display: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    /*allinea perfettamente al centro*/
+    transform: translate(-50%, -50%);
+}
+
+.progress-bar-2:hover .inside{
+    background-color: var(--highlight);
+}
+
+.progress-bar-2:hover .ball-right{
+    display: block;
+    background-color: var(--highlight);
+}
+
+
+
+
+
+
+
+
