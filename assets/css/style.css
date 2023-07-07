@@ -71,10 +71,13 @@ h1 {
     background-color: black;
 
     height: var(--top-bar-height);
+    width: 100%;
+    padding: 1rem;
 
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
 /* middle section */
@@ -82,19 +85,6 @@ h1 {
 #content {
     width: calc(100% - var(--sidebar-width));
 
-    overflow: auto;
-}
-
-.container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1.5rem;
-}
-
-.container .row .col {
-    width: calc(100%/6) - 20px;
-    margin: 20px;
 }
 
 
@@ -110,18 +100,49 @@ h1 {
 
 /* SECTIONS */
 
+/*Middle section*/
 
-/*middle section*/
+#content {
+    overflow-y:auto;
+    overflow-x: hidden;
+}
 
-/* sidebar */
+    /* Header */
+
+#top-bar {
+    display:flex;
+    justify-content: right;
+    align-items: flex;
+
+    opacity:0.6;
+}
+
+#top-bar > div {
+    padding: 1rem;
+}
+
+.btn:hover {
+    padding: 1.5rem;
+    font-size: larger;
+}
+
+#top-bar .btn {
+    display: inline-block;
+    padding: 1rem 1.4rem;;
+    border: 1px solid white;
+    border-radius: 35px;
+    color: white;
+}
+
+    /* Sidebar */
 
 #sidebar {
     display: flex;
     flex-direction: column;
-    overflow: auto;
+    overflow-y: auto;
+    justify-content: space-between;
 }
-
-/* home */
+        /* Home */
 
 .logo .lg-logo {
     width: 100%;
@@ -135,12 +156,23 @@ h1 {
 .home-case,
 .playlist-case,
 .bottom-case {
+    width: 100%;
     padding: 1.5rem;
 }
 
 .home {
     display: flex;
     padding-top: 1rem;
+}
+
+.colored-border {
+    display: flex;
+}
+
+.b-left-colored {
+    border-left: 4px solid var(--highlight);
+    margin-left: -1.5rem;
+    padding-right: 1.5rem;
 }
 
 .home img {
@@ -163,7 +195,7 @@ h1 {
     filter: invert(0%);
 }
 
-/* playlist */
+    /* playlist */
 
 .playlist-case h3 {
     color: var(--txt-white);
@@ -197,11 +229,24 @@ h1 {
     font-size: 3rem;
 }
 
-/* bottom */
+    /* bottom */
+
+.playlist-case {
+    overflow-y: auto;
+    min-height: 80px;
+}
 
 .install {
     display: flex;
     gap: 1rem;
+}
+
+.install:hover .pointer {
+    color: var(--txt-white);
+}
+
+.install:hover .fa-circle-arrow-down{
+    color: var(--txt-white)
 }
 
 .account {
@@ -220,11 +265,12 @@ h1 {
 }
 
 
-/*navbar*/
+        /*navbar*/
 
 #menu {
     display: flex;
     justify-content: center;
+    padding: 1rem;
 }
 
 .menu-list {
@@ -255,7 +301,6 @@ h1 {
     width: 50%;
     border-bottom: 2px solid var(--highlight);
 }
-
 
 
 .menu-list li:hover {
@@ -291,8 +336,8 @@ h1 {
 }
 
 .col img {
-    width:250px;
-    height: 250px;
+    width:150px;
+    height: 150px;
 }
 
 .outer {
@@ -497,4 +542,19 @@ h1 {
 .progress-bar-2:hover .ball-right {
     display: block;
     background-color: var(--highlight);
+}
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (mac-width: 1200px) {
+
+}
+
+@media screen and (mac-width: 1200px) {
+    
+}
+
+@media screen and (mac-width: 1200px) {
+    
 }
