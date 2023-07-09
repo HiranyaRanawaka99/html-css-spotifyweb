@@ -323,7 +323,6 @@ h1 {
     width: 100%;
 
     display: flex;
-    flex-direction: wrap;
 
     margin-left: -1rem;
     margin-right: -1rem;
@@ -348,21 +347,18 @@ h1 {
     
 }
 
-
-
 .inner {
-    width:100%;
     font-size: 3rem;
 
     position: absolute;
     top:0;
     left:0;
-
     display: none;
 }
 
 .col:hover .inner { 
     display: flex;
+    justify-content: center;
 }
 
 .inner .fa-circle-play {
@@ -555,15 +551,43 @@ h1 {
 
 
 /*MEDIA QUERIES*/
+/* 
+@media screen and (max-width: 1200px) {
+.row {
+    flex-wrap: wrap;
+}
+.row .col {
+    width: calc(100% / 4);
+    }
+}
 
-@media screen and (mac-width: 1200px) {
+@media screen and (max-width: 960px) {
 
 }
 
-@media screen and (mac-width: 1200px) {
+@media screen and (max-width: 720px) {
+    .row .col{
+        width: calc(100% / 2);
+    }
     
 }
 
-@media screen and (mac-width: 1200px) {
+@media screen and (max-width:500px) {
+    #sidebar {
+        width: 50px;
+    }
+
+    .lg-logo,
+    .logo-text,
+    .playlist-case,
+    .download,
+    .account-name
+    {
+        display: none;
+    }
     
-}
+    .sm-logo {
+        display: ineline-block;
+    }
+} */
+
